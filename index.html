@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Graph</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/graph.css">
+</head>
+
+<body>
+	<!-- Side navigation -->
+	<div class="sidenav">
+		<ul>
+			<li>
+				<div style="height: 25px"></div>
+			</li>
+			<li>
+				<div class="sidediv" id="data">
+					<label class="sidelabel"><span><i class="fa fa-database"></i></span> Data</label>
+				</div>
+
+			</li>
+			<li>
+				<div class="sidediv" id="visualize">
+					<label class="sidelabel"><span><i class="fa fa-bar-chart"></i></span> Visualize</label>
+				</div>
+
+			</li>
+		</ul>
+	</div>
+
+	<div class="main container" id="main">
+		<div id="data-form">
+			<div class="row">
+				<div class="col-md-6 col-lg-4">
+					<label>Chart Type</label>
+					<select class="form-control" id="type">
+						<option value="bar">Bar</option>
+						<option value="line">Line</option>
+						<option value="pie">Pie</option>
+						<option value="radar">Radar</option>
+						<option value="doughnut">Doughnut</option>
+						<option value="polarArea">Polar Area</option>
+					</select>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<label>Data Labels <em>(Label 1, Label 2, ... )</em></label>
+					<input type="text" id="data-labels" class="form-control">
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<label>Data Values <em>(Value 1, Value 2, ... )</em></label>
+					<input type="text" id="data-values" class="form-control">
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-xs-2">
+					<button class="btn " id="submit">Visualize</button>
+				</div>
+			</div>
+		</div>
+		<div id="data-chart-div" style="margin: 5%;">
+
+
+		</div>
+
+		<div class="row justify-content-center" style="margin-top: 10%;">
+			<div class="col-md-8" id="analysis">
+				<legend class="border-bottom mb-4">Analysis Summary</legend>
+				<table class="table table-striped">
+					<thead class="thead">
+						<tr>
+							<th scope="col" style="text-align: center;">Central Tendency</th>
+							<th scope="col" style="text-align: center;">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="text-align: center;">Mean</td>
+							<td style="text-align: center; " id="mean"></td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">Median</td>
+							<td style="text-align: center;" id="median"></td>
+						</tr>
+						<tr id="modeAnalysis">
+							<td style="text-align: center;">Mode</td>
+							<td style="text-align: center;" id="mode"></td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">Variance</td>
+							<td style="text-align: center;" id="variance"></td>
+						</tr>
+						<tr>
+							<td style="text-align: center;">Standard Deviation</td>
+							<td style="text-align: center;" id="sd"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<div class="row" style="margin-top: 10%;">
+			<div class="col" id="mean-chart-div">
+
+			</div>
+
+		</div>
+		<div class="row" style="margin-top: 10%;">
+			<div class="col" id="median-chart-div">
+
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<script type="text/javascript" src="javascript/graph.js"></script>
+</body>
+
+</html>
